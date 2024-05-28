@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mengubah Warna Kotak</title>
+    <style>
+      .kotak {
+        width: 50px;
+        height: 50px;
+        border: 1px solid #ccc;
+        margin: 10px;
+        cursor: pointer;
+      }
+
+      .kotak.merah {
+        background-color: red;
+      }
+
+      .kotak.kuning {
+        background-color: yellow;
+      }
+
+      .kotak.hijau {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mengubah Warna Kotak</h1>
+
+    <div id="kotak-1" class="kotak"></div>
+    <div id="kotak-2" class="kotak"></div>
+    <div id="kotak-3" class="kotak"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        var warna = ["merah", "kuning", "hijau"]; // Array warna
+
+        $(".kotak").dblclick(function () {
+          var idKotak = $(this).attr("id"); // Dapatkan ID kotak
+          var warnaSaatIni = $(this).attr("class").split(" ")[1]; // Dapatkan warna saat ini
+          var indexWarna = warna.indexOf(warnaSaatIni); // Cari indeks warna saat ini
+
+          // Hitung indeks warna berikutnya
+          var nextIndex = (indexWarna + 1) % warna.length;
+
+          // Ubah warna kotak dengan warna berikutnya
+          $(this).removeClass(warnaSaatIni).addClass(warna[nextIndex]);
+        });
+      });
+    </script>
+  </body>
+</html>

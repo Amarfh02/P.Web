@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Efek Fade In dan Fade Out</title>
+    <style>
+      .kotak {
+        width: 100px;
+        height: 100px;
+        background-color: #ccc;
+        margin: 10px;
+        text-align: center;
+        line-height: 100px;
+        display: none; /* Sembunyikan kotak secara default */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Efek Fade In dan Fade Out</h1>
+
+    <div id="kotak-1" class="kotak">Kotak 1</div>
+    <div id="kotak-2" class="kotak">Kotak 2</div>
+    <div id="kotak-3" class="kotak">Kotak 3</div>
+
+    <button id="btn-tampilkan">Tampilkan</button>
+    <button id="btn-sembunyikan">Sembunyikan</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Sembunyikan semua kotak saat halaman dimuat
+        $(".kotak").hide();
+
+        // Tampilkan kotak saat tombol "Tampilkan" diklik
+        $("#btn-tampilkan").click(function () {
+          $(".kotak").fadeIn(500); // Efek fade in selama 500 milidetik
+        });
+
+        // Sembunyikan kotak saat tombol "Sembunyikan" diklik
+        $("#btn-sembunyikan").click(function () {
+          $(".kotak").fadeOut(500); // Efek fade out selama 500 milidetik
+        });
+      });
+    </script>
+  </body>
+</html>

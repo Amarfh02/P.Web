@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tampilan Gambar</title>
+    <style>
+      .gambar {
+        display: none; /* Sembunyikan gambar secara default */
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+        border: 1px solid #ccc;
+        text-align: center;
+      }
+
+      .gambar.tampil {
+        display: block; /* Tampilkan gambar saat kelas "tampil" ditambahkan */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tampilan Gambar</h1>
+
+    <div id="gambar-1" class="gambar">
+      <img src="gambar1.jpg" alt="Gambar 1" />
+      <p>Gambar 1</p>
+    </div>
+
+    <div id="gambar-2" class="gambar">
+      <img src="gambar2.jpg" alt="Gambar 2" />
+      <p>Gambar 2</p>
+    </div>
+
+    <div id="gambar-3" class="gambar">
+      <img src="gambar3.jpg" alt="Gambar 3" />
+      <p>Gambar 3</p>
+    </div>
+
+    <button id="btn-sembunyi">Sembunyikan Semua</button>
+    <button id="btn-tampilkan">Tampilkan Semua</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Sembunyikan semua gambar saat halaman dimuat
+        $(".gambar").hide();
+
+        // Sembunyikan gambar saat tombol "Sembunyikan Semua" diklik
+        $("#btn-sembunyi").click(function () {
+          $(".gambar").hide();
+        });
+
+        // Tampilkan semua gambar saat tombol "Tampilkan Semua" diklik
+        $("#btn-tampilkan").click(function () {
+          $(".gambar").show();
+        });
+      });
+    </script>
+  </body>
+</html>
