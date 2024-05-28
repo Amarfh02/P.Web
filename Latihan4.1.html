@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konversi Nilai Angka ke Huruf</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+      }
+
+      input[type="number"] {
+        width: 100px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      #hasil {
+        font-weight: bold;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Konversi Nilai Angka ke Huruf</h1>
+
+    <input type="number" id="nilaiAngka" placeholder="Masukkan Nilai Angka" />
+    <button onclick="konversi()">Konversi</button>
+
+    <p id="hasil"></p>
+
+    <script>
+      function konversi() {
+        var nilaiAngka = parseInt(document.getElementById("nilaiAngka").value);
+
+        if (isNaN(nilaiAngka)) {
+          alert("Nilai yang dimasukkan bukan angka!");
+          return;
+        }
+
+        var nilaiHuruf;
+
+        if (nilaiAngka >= 0 && nilaiAngka <= 40) {
+          nilaiHuruf = "E";
+        } else if (nilaiAngka >= 41 && nilaiAngka <= 55) {
+          nilaiHuruf = "D";
+        } else if (nilaiAngka >= 56 && nilaiAngka <= 60) {
+          nilaiHuruf = "C";
+        } else if (nilaiAngka >= 61 && nilaiAngka <= 65) {
+          nilaiHuruf = "BC";
+        } else if (nilaiAngka >= 66 && nilaiAngka <= 70) {
+          nilaiHuruf = "B";
+        } else if (nilaiAngka >= 71 && nilaiAngka <= 80) {
+          nilaiHuruf = "AB";
+        } else if (nilaiAngka >= 81 && nilaiAngka <= 100) {
+          nilaiHuruf = "A";
+        } else {
+          nilaiHuruf = "Nilai di luar jangkauan";
+        }
+
+        document.getElementById("hasil").innerHTML =
+          "Nilai huruf: " + nilaiHuruf;
+      }
+    </script>
+  </body>
+</html>
