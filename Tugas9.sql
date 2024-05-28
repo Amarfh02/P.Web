@@ -1,0 +1,5 @@
+CREATE TABLE buku_tamu (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(255) NOT NULL,
+    isi TEXT NOT NULL
+);

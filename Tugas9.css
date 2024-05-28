@@ -1,0 +1,9 @@
+.guestbook-entry {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.guestbook-entry h3 {
+  font-weight: bold;
+}
